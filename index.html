@@ -1,376 +1,478 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>National Conference on Next-Gen GST Reforms | HNGU Patan</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            navy: '#0f274a',
+                            primary: '#1a365d',
+                            secondary: '#2b6cb0',
+                            accent: '#d69e2e',
+                            gold: '#b7791f',
+                            light: '#f8fafc',
+                            card: '#ffffff'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'Segoe UI', 'Roboto', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --primary: #1a365d;
-            --secondary: #2b6cb0;
-            --accent: #d69e2e;
-            --bg-light: #f7fafc;
-            --text-dark: #2d3748;
-            --white: #ffffff;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
         body {
-            background-color: var(--bg-light);
-            color: var(--text-dark);
-            line-height: 1.6;
-        }
-
-        /* Navigation */
-        nav {
-            background: var(--primary);
-            color: var(--white);
-            padding: 1rem 5%;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-
-        nav .logo {
-            font-weight: bold;
-            font-size: 1.2rem;
-        }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 1.5rem;
-        }
-
-        nav a {
-            color: var(--white);
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-
-        nav a:hover {
-            color: var(--accent);
-        }
-
-        /* Hero Section */
-        header {
-            background: linear-gradient(rgba(26, 54, 93, 0.88), rgba(43, 108, 176, 0.88)), url('https://images.unsplash.com/photo-1541829070764-84a7d30dd3f3?auto=format&fit=crop&q=80') center/cover;
-            color: var(--white);
-            padding: 4rem 1rem;
-            text-align: center;
-        }
-
-        .header-content {
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-
-        .badges {
-            font-size: 0.9rem;
-            color: var(--accent);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 1rem;
-            font-weight: bold;
-        }
-
-        header h1 {
-            font-size: 2.2rem;
-            margin-bottom: 1rem;
-            line-height: 1.3;
-        }
-
-        header h2 {
-            font-size: 1.3rem;
-            font-weight: 400;
-            margin-bottom: 1.5rem;
-            color: #e2e8f0;
-        }
-
-        .date-location {
-            background: rgba(255, 255, 255, 0.15);
-            padding: 10px 20px;
-            border-radius: 30px;
-            display: inline-block;
-            margin-bottom: 2rem;
-            font-weight: bold;
-        }
-
-        .cta-btn {
-            display: inline-block;
-            background: var(--accent);
-            color: var(--primary);
-            padding: 12px 30px;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 1.1rem;
-            transition: background 0.3s, transform 0.2s;
-        }
-
-        .cta-btn:hover {
-            background: #b7791f;
-            color: var(--white);
-            transform: translateY(-2px);
-        }
-
-        /* Main Container */
-        .container {
-            max-width: 1100px;
-            margin: 3rem auto;
-            padding: 0 1.5rem;
-        }
-
-        section {
-            margin-bottom: 3.5rem;
-        }
-
-        .section-title {
-            font-size: 1.8rem;
-            color: var(--primary);
-            border-bottom: 3px solid var(--accent);
-            padding-bottom: 0.5rem;
-            margin-bottom: 1.5rem;
-        }
-
-        /* Grid Layouts */
-        .grid-2 {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .grid-3 {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
-        }
-
-        .card {
-            background: var(--white);
-            padding: 1.5rem;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-            border-left: 4px solid var(--secondary);
-        }
-
-        .card h3 {
-            color: var(--primary);
-            margin-bottom: 0.8rem;
-        }
-
-        /* Dates Table */
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            background: var(--white);
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-            border-radius: 8px;
-            overflow: hidden;
-        }
-
-        th, td {
-            padding: 12px 15px;
-            text-align: left;
-            border-bottom: 1px solid #e2e8f0;
-        }
-
-        th {
-            background-color: var(--primary);
-            color: var(--white);
-        }
-
-        tr:hover {
-            background-color: #f1f5f9;
-        }
-
-        /* Footer */
-        footer {
-            background: var(--primary);
-            color: var(--white);
-            text-align: center;
-            padding: 2rem 1rem;
-            margin-top: 4rem;
-        }
-
-        @media (max-width: 768px) {
-            header h1 { font-size: 1.7rem; }
-            nav ul { display: none; }
+            font-family: 'Inter', sans-serif;
         }
     </style>
 </head>
-<body>
+<body class="bg-brand-light text-slate-800 flex flex-col min-h-screen antialiased selection:bg-brand-accent selection:text-white">
 
     <!-- Navigation Bar -->
-    <nav>
-        <div class="logo">HNGU Conference 2026</div>
-        <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#tracks">Tracks</a></li>
-            <li><a href="#dates">Important Dates</a></li>
-            <li><a href="#fees">Fees</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
+    <header class="sticky top-0 z-50 bg-brand-primary/95 backdrop-blur-md text-white shadow-md transition-all">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3.5 flex items-center justify-between">
+            <a href="#" class="flex items-center gap-2 group">
+                <span class="text-xl font-bold tracking-tight text-white group-hover:text-brand-accent transition-colors">HNGU Conference 2026</span>
+            </a>
 
-    <!-- Header / Hero Section -->
-    <header>
-        <div class="header-content">
-            <div class="badges">In Association with Gujarat State Tax Dept & MSME DIC</div>
-            <h1>Two-Days Collaborative National Conference</h1>
-            <h2>Impact of Next-Generation GST Reforms: Strengthening MSMEs, Entrepreneurship & Rural Community for Atmanirbhar Bharat</h2>
-            <p style="margin-bottom: 1.5rem;">Organized by Department of Commerce & Management, Hemchandracharya North Gujarat University (HNGU), Patan</p>
-            <div class="date-location">
-                📍 Convention Hall, HNGU Patan | 🗓️ 28-29 November 2026
-            </div>
-            <div>
-                <a href="https://docs.google.com/forms/d/e/1FAIpQLScMY3yysCbqEXMZairooIGEMxBD3QZ1tPjuiSbNUY3ohAwaCw/viewform?usp=publish-editor" target="_blank" class="cta-btn">Register & Submit Paper →</a>
-            </div>
+            <!-- Desktop Nav Items -->
+            <ul class="hidden lg:flex items-center gap-6 text-sm font-medium">
+                <li><a href="#about" class="text-slate-200 hover:text-brand-accent transition-colors">About</a></li>
+                <li><a href="#tracks" class="text-slate-200 hover:text-brand-accent transition-colors">Tracks</a></li>
+                <li><a href="#awards" class="text-slate-200 hover:text-brand-accent transition-colors">Awards</a></li>
+                <li><a href="#dates" class="text-slate-200 hover:text-brand-accent transition-colors">Important Dates</a></li>
+                <li><a href="#guidelines" class="text-slate-200 hover:text-brand-accent transition-colors">Guidelines</a></li>
+                <li><a href="#fees" class="text-slate-200 hover:text-brand-accent transition-colors">Fees</a></li>
+                <li><a href="#tourism" class="text-slate-200 hover:text-brand-accent transition-colors">Attractions</a></li>
+                <li><a href="#contact" class="text-slate-200 hover:text-brand-accent transition-colors">Contact</a></li>
+                <li>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLScMY3yysCbqEXMZairooIGEMxBD3QZ1tPjuiSbNUY3ohAwaCw/viewform?usp=publish-editor" 
+                       target="_blank" 
+                       rel="noopener noreferrer" 
+                       class="ml-2 inline-flex items-center justify-center px-4 py-2 rounded-full bg-brand-accent text-brand-navy font-semibold text-xs uppercase tracking-wider hover:bg-yellow-400 transition-all shadow-sm">
+                        Register Now
+                    </a>
+                </li>
+            </ul>
+
+            <!-- Mobile Hamburger Button -->
+            <button id="mobileMenuBtn" aria-label="Toggle Menu" class="lg:hidden p-2 rounded-lg text-slate-200 hover:text-white hover:bg-brand-secondary focus:outline-none focus:ring-2 focus:ring-brand-accent">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path id="menuIcon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+        </nav>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobileMenu" class="hidden lg:hidden bg-brand-navy/98 border-t border-slate-700 px-4 pt-3 pb-5 space-y-2 text-sm font-medium">
+            <a href="#about" class="block px-3 py-2 rounded-md text-slate-200 hover:text-brand-accent hover:bg-slate-800">About</a>
+            <a href="#tracks" class="block px-3 py-2 rounded-md text-slate-200 hover:text-brand-accent hover:bg-slate-800">Tracks</a>
+            <a href="#awards" class="block px-3 py-2 rounded-md text-slate-200 hover:text-brand-accent hover:bg-slate-800">Awards</a>
+            <a href="#dates" class="block px-3 py-2 rounded-md text-slate-200 hover:text-brand-accent hover:bg-slate-800">Important Dates</a>
+            <a href="#guidelines" class="block px-3 py-2 rounded-md text-slate-200 hover:text-brand-accent hover:bg-slate-800">Guidelines</a>
+            <a href="#fees" class="block px-3 py-2 rounded-md text-slate-200 hover:text-brand-accent hover:bg-slate-800">Fees</a>
+            <a href="#tourism" class="block px-3 py-2 rounded-md text-slate-200 hover:text-brand-accent hover:bg-slate-800">Attractions</a>
+            <a href="#contact" class="block px-3 py-2 rounded-md text-slate-200 hover:text-brand-accent hover:bg-slate-800">Contact</a>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLScMY3yysCbqEXMZairooIGEMxBD3QZ1tPjuiSbNUY3ohAwaCw/viewform?usp=publish-editor" 
+               target="_blank" 
+               rel="noopener noreferrer" 
+               class="block mt-3 text-center px-4 py-2.5 rounded-lg bg-brand-accent text-brand-navy font-bold text-xs uppercase tracking-wider">
+                Register & Submit Paper
+            </a>
         </div>
     </header>
 
-    <div class="container">
+    <!-- Hero / Header Section -->
+    <section class="relative bg-gradient-to-br from-slate-900 via-brand-navy to-brand-secondary text-white py-16 sm:py-24 px-4 overflow-hidden">
+        <div class="absolute inset-0 opacity-15 bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:20px_20px]"></div>
+        
+        <div class="relative max-w-4xl mx-auto text-center">
+            <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-brand-accent/20 border border-brand-accent/40 text-brand-accent text-xs font-bold uppercase tracking-wider mb-6">
+                <span>In Association with Gujarat State Tax Dept & MSME DIC</span>
+            </div>
+
+            <img src="WhatsApp%20Image%202026-09-25%20at%207.28.05%20PM.jpeg" alt="GST conference announcement" class="mx-auto mb-8 w-full max-w-3xl rounded-xl border border-white/20 shadow-2xl" />
+
+            <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight leading-tight text-white mb-4">
+                Two-Days Collaborative National Conference
+            </h1>
+
+            <p class="text-base sm:text-lg md:text-xl text-slate-200 font-medium max-w-3xl mx-auto mb-6 leading-relaxed">
+                Impact of Next-Generation GST Reforms: Strengthening MSMEs, Entrepreneurship & Rural Community for Atmanirbhar Bharat
+            </p>
+
+            <p class="text-sm sm:text-base text-slate-300 max-w-2xl mx-auto mb-8">
+                Organized by Department of Commerce & Management, Hemchandracharya North Gujarat University (HNGU), Patan
+            </p>
+
+            <div class="inline-block bg-white/10 backdrop-blur-sm border border-white/20 px-5 py-2.5 rounded-full text-sm font-semibold text-white mb-8 shadow-inner">
+                📍 Convention Hall, HNGU Patan &nbsp;|&nbsp; 🗓️ 28-29 November 2026
+            </div>
+
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLScMY3yysCbqEXMZairooIGEMxBD3QZ1tPjuiSbNUY3ohAwaCw/viewform?usp=publish-editor" 
+                   target="_blank" 
+                   rel="noopener noreferrer" 
+                   class="w-full sm:w-auto px-8 py-3.5 rounded-lg bg-brand-accent hover:bg-yellow-400 text-brand-navy font-bold text-base transition-all transform hover:-translate-y-0.5 shadow-lg shadow-black/30">
+                    Register & Submit Paper &rarr;
+                </a>
+                <a href="#about" class="w-full sm:w-auto px-8 py-3.5 rounded-lg bg-white/10 hover:bg-white/20 text-white font-medium text-base border border-white/30 transition-all">
+                    Explore Details
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content Container -->
+    <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 flex-grow space-y-16">
 
         <!-- About Section -->
-        <section id="about">
-            <h2 class="section-title">About the Event</h2>
-            <div class="card">
-                <p>This National Conference aims to provide a dynamic platform for academicians, researchers, industry experts, policymakers, professionals, and students to deliberate on emerging GST reforms and their role in advancing Atmanirbhar Bharat and Viksit Bharat 2047.</p>
-                <br>
-                <p>Arranged in collaboration with <strong>Indian Council of Social Science Research (ICSSR), New Delhi</strong>. Knowledge partners include the <strong>Gujarat State Tax Office</strong> and <strong>District Industries Centre (DIC)</strong> of Govt. of Gujarat.</p>
+        <section id="about" class="scroll-mt-24">
+            <div class="flex items-center gap-3 border-b-2 border-brand-accent pb-3 mb-6">
+                <h2 class="text-2xl sm:text-3xl font-bold text-brand-primary tracking-tight">About the Event</h2>
+            </div>
+            <div class="bg-white rounded-xl shadow-sm border-l-4 border-brand-secondary p-6 sm:p-8 space-y-4 text-slate-700 leading-relaxed">
+                <p>
+                    This National Conference aims to provide a dynamic platform for academicians, researchers, industry experts, policymakers, professionals, and students to deliberate on emerging GST reforms and their role in advancing <strong>Atmanirbhar Bharat</strong> and <strong>Viksit Bharat 2047</strong>.
+                </p>
+                <p>
+                    Arranged in collaboration with <strong>Indian Council of Social Science Research (ICSSR), New Delhi</strong>. Knowledge partners include the <strong>Gujarat State Tax Office</strong> and <strong>District Industries Centre (DIC)</strong> of Govt. of Gujarat.
+                </p>
             </div>
         </section>
 
         <!-- Conference Tracks -->
-        <section id="tracks">
-            <h2 class="section-title">Conference Themes & Tracks</h2>
-            <div class="grid-3">
-                <div class="card">
-                    <h3>Track I</h3>
-                    <p>Next-Generation GST Reforms and Public Policy</p>
+        <section id="tracks" class="scroll-mt-24">
+            <div class="flex items-center gap-3 border-b-2 border-brand-accent pb-3 mb-6">
+                <h2 class="text-2xl sm:text-3xl font-bold text-brand-primary tracking-tight">Conference Themes & Tracks</h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-white rounded-xl p-6 shadow-sm border-l-4 border-brand-secondary hover:shadow-md transition-shadow">
+                    <span class="text-xs font-bold uppercase tracking-wider text-brand-accent block mb-2">Track I</span>
+                    <h3 class="text-lg font-bold text-brand-primary mb-2">Public Policy</h3>
+                    <p class="text-sm text-slate-600">Next-Generation GST Reforms and Public Policy implementation dynamics.</p>
                 </div>
-                <div class="card">
-                    <h3>Track II</h3>
-                    <p>Next-Gen GST Reforms: Atmanirbhar Bharat & Viksit Bharat 2047</p>
+                <div class="bg-white rounded-xl p-6 shadow-sm border-l-4 border-brand-secondary hover:shadow-md transition-shadow">
+                    <span class="text-xs font-bold uppercase tracking-wider text-brand-accent block mb-2">Track II</span>
+                    <h3 class="text-lg font-bold text-brand-primary mb-2">Viksit Bharat 2047</h3>
+                    <p class="text-sm text-slate-600">Next-Gen GST Reforms: Fostering Atmanirbhar Bharat & Viksit Bharat 2047 roadmap.</p>
                 </div>
-                <div class="card">
-                    <h3>Track III</h3>
-                    <p>Sustainable Development, MSMEs, and Entrepreneurship</p>
+                <div class="bg-white rounded-xl p-6 shadow-sm border-l-4 border-brand-secondary hover:shadow-md transition-shadow">
+                    <span class="text-xs font-bold uppercase tracking-wider text-brand-accent block mb-2">Track III</span>
+                    <h3 class="text-lg font-bold text-brand-primary mb-2">MSMEs & Sustainability</h3>
+                    <p class="text-sm text-slate-600">Sustainable Development, MSMEs enablement, and entrepreneurship growth.</p>
                 </div>
-                <div class="card">
-                    <h3>Track IV</h3>
-                    <p>Emerging Issues & Contemporary Research Policy Reforms</p>
+                <div class="bg-white rounded-xl p-6 shadow-sm border-l-4 border-brand-secondary hover:shadow-md transition-shadow">
+                    <span class="text-xs font-bold uppercase tracking-wider text-brand-accent block mb-2">Track IV</span>
+                    <h3 class="text-lg font-bold text-brand-primary mb-2">Policy Reforms</h3>
+                    <p class="text-sm text-slate-600">Emerging Issues & Contemporary Research on state and federal policy reforms.</p>
                 </div>
-                <div class="card">
-                    <h3>Track V</h3>
-                    <p>Rural Communities, Inclusive Growth & GST Reforms</p>
+                <div class="bg-white rounded-xl p-6 shadow-sm border-l-4 border-brand-secondary hover:shadow-md transition-shadow">
+                    <span class="text-xs font-bold uppercase tracking-wider text-brand-accent block mb-2">Track V</span>
+                    <h3 class="text-lg font-bold text-brand-primary mb-2">Rural Communities</h3>
+                    <p class="text-sm text-slate-600">Rural Communities, Inclusive Growth, grassroots economy & GST Reforms.</p>
                 </div>
-                <div class="card">
-                    <h3>Track VI</h3>
-                    <p>Innovation, Emerging Technologies & Future Economy</p>
+                <div class="bg-white rounded-xl p-6 shadow-sm border-l-4 border-brand-secondary hover:shadow-md transition-shadow">
+                    <span class="text-xs font-bold uppercase tracking-wider text-brand-accent block mb-2">Track VI</span>
+                    <h3 class="text-lg font-bold text-brand-primary mb-2">Tech & Future Economy</h3>
+                    <p class="text-sm text-slate-600">Innovation, Emerging Technologies, automated compliance & future economy.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Awards Section -->
+        <section id="awards" class="scroll-mt-24">
+            <div class="flex items-center gap-3 border-b-2 border-brand-accent pb-3 mb-6">
+                <h2 class="text-2xl sm:text-3xl font-bold text-brand-primary tracking-tight">Awards & Recognition</h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="bg-white rounded-xl p-8 shadow-sm border-t-4 sm:border-t-0 sm:border-l-4 border-brand-accent flex flex-col items-center text-center justify-center hover:shadow-md transition-shadow">
+                    <div class="w-16 h-16 rounded-full bg-amber-50 flex items-center justify-center text-3xl mb-4 shadow-inner">
+                        🏆
+                    </div>
+                    <span class="text-xs font-bold uppercase tracking-wider text-brand-gold mb-1">First Place</span>
+                    <h3 class="text-xl font-bold text-brand-primary mb-2">Best Research Paper</h3>
+                    <p class="text-2xl font-extrabold text-brand-gold">Gift Worth ₹10,000</p>
+                    <p class="text-xs text-slate-500 mt-2">Awarded based on review panel evaluations and presentation rigor.</p>
+                </div>
+
+                <div class="bg-white rounded-xl p-8 shadow-sm border-t-4 sm:border-t-0 sm:border-l-4 border-slate-400 flex flex-col items-center text-center justify-center hover:shadow-md transition-shadow">
+                    <div class="w-16 h-16 rounded-full bg-slate-100 flex items-center justify-center text-3xl mb-4 shadow-inner">
+                        🥈
+                    </div>
+                    <span class="text-xs font-bold uppercase tracking-wider text-slate-500 mb-1">Second Place</span>
+                    <h3 class="text-xl font-bold text-brand-primary mb-2">Runner-Up</h3>
+                    <p class="text-2xl font-extrabold text-slate-700">Gift Worth ₹5,000</p>
+                    <p class="text-xs text-slate-500 mt-2">Recognizing exceptional depth and scholarly contribution.</p>
                 </div>
             </div>
         </section>
 
         <!-- Important Dates -->
-        <section id="dates">
-            <h2 class="section-title">Important Dates</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Event Milestone</th>
-                        <th>Date</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr><td>Paper Submission Opens</td><td>1 August 2026</td></tr>
-                    <tr><td>Abstract Submission Deadline</td><td>30 October 2026</td></tr>
-                    <tr><td>Intimation of Acceptance</td><td>05 November 2026</td></tr>
-                    <tr><td>Full Paper Submission & Registration Deadline</td><td>15 November 2026</td></tr>
-                    <tr><td><strong>Conference Dates</strong></td><td><strong>28-29 November 2026</strong></td></tr>
-                </tbody>
-            </table>
+        <section id="dates" class="scroll-mt-24">
+            <div class="flex items-center gap-3 border-b-2 border-brand-accent pb-3 mb-6">
+                <h2 class="text-2xl sm:text-3xl font-bold text-brand-primary tracking-tight">Important Dates</h2>
+            </div>
+            <div class="overflow-x-auto bg-white rounded-xl shadow-sm border border-slate-200">
+                <table class="w-full text-left border-collapse">
+                    <thead>
+                        <tr class="bg-brand-primary text-white text-sm">
+                            <th class="py-3.5 px-6 font-semibold">Event Milestone</th>
+                            <th class="py-3.5 px-6 font-semibold w-48 sm:w-64">Date</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-100 text-sm">
+                        <tr class="hover:bg-slate-50 transition-colors">
+                            <td class="py-3.5 px-6 font-medium text-slate-800">Paper Submission Opens</td>
+                            <td class="py-3.5 px-6 text-slate-600">1 August 2026</td>
+                        </tr>
+                        <tr class="hover:bg-slate-50 transition-colors">
+                            <td class="py-3.5 px-6 font-medium text-slate-800">Abstract Submission Deadline</td>
+                            <td class="py-3.5 px-6 text-slate-600">30 October 2026</td>
+                        </tr>
+                        <tr class="hover:bg-slate-50 transition-colors">
+                            <td class="py-3.5 px-6 font-medium text-slate-800">Intimation of Acceptance</td>
+                            <td class="py-3.5 px-6 text-slate-600">05 November 2026</td>
+                        </tr>
+                        <tr class="hover:bg-slate-50 transition-colors">
+                            <td class="py-3.5 px-6 font-medium text-slate-800">Full Paper Submission & Registration Deadline</td>
+                            <td class="py-3.5 px-6 text-slate-600">15 November 2026</td>
+                        </tr>
+                        <tr class="bg-amber-50/70 font-semibold hover:bg-amber-50 transition-colors text-brand-primary">
+                            <td class="py-4 px-6 flex items-center gap-2">
+                                <span>🗓️</span> Conference Dates
+                            </td>
+                            <td class="py-4 px-6 font-bold text-brand-navy">28-29 November 2026</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </section>
 
-        <!-- Guidelines -->
-        <section id="guidelines">
-            <h2 class="section-title">Paper Submission Guidelines</h2>
-            <div class="grid-2">
-                <div class="card">
-                    <h3>Abstract Submission</h3>
-                    <p>Max 300 words (MS Word) including Title, Author(s), Affiliation, Email, Mobile No., and 4-6 Keywords. Submit abstract to: <a href="mailto:conferencegujarat@gmail.com">conferencegujarat@gmail.com</a></p>
+        <!-- Paper Submission Guidelines -->
+        <section id="guidelines" class="scroll-mt-24">
+            <div class="flex items-center gap-3 border-b-2 border-brand-accent pb-3 mb-6">
+                <h2 class="text-2xl sm:text-3xl font-bold text-brand-primary tracking-tight">Paper Submission Guidelines</h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="bg-white rounded-xl p-6 shadow-sm border-l-4 border-brand-secondary flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-lg font-bold text-brand-primary mb-3">Abstract Submission</h3>
+                        <p class="text-sm text-slate-600 leading-relaxed mb-4">
+                            Max 300 words (MS Word format) including Title, Author(s), Institutional Affiliation, Email ID, Mobile No., and 4-6 Keywords.
+                        </p>
+                    </div>
+                    <div class="pt-3 border-t border-slate-100">
+                        <span class="text-xs font-semibold text-slate-500 uppercase">Submit Abstract via Email:</span>
+                        <a href="mailto:conferencegujarat@gmail.com" class="block text-brand-secondary font-bold text-sm hover:underline mt-0.5">
+                            conferencegujarat@gmail.com
+                        </a>
+                    </div>
                 </div>
-                <div class="card">
-                    <h3>Full Paper Guidelines</h3>
-                    <p>Max 5,000 words | Font: Times New Roman, 12 pt | Spacing: 1.5 | Style: APA 7th Edition. Upload full paper through the registration link.</p>
+
+                <div class="bg-white rounded-xl p-6 shadow-sm border-l-4 border-brand-secondary flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-lg font-bold text-brand-primary mb-3">Full Paper Guidelines</h3>
+                        <p class="text-sm text-slate-600 leading-relaxed mb-4">
+                            Word Count: Max 5,000 words | Font: Times New Roman, 12 pt | Line Spacing: 1.5 | Referencing Style: APA 7th Edition.
+                        </p>
+                    </div>
+                    <div class="pt-3 border-t border-slate-100">
+                        <span class="text-xs font-semibold text-slate-500 uppercase">Submission Mode:</span>
+                        <p class="text-sm text-slate-700 font-semibold mt-0.5">Upload full paper directly through the registration link.</p>
+                    </div>
                 </div>
             </div>
         </section>
 
         <!-- Registration Fees -->
-        <section id="fees">
-            <h2 class="section-title">Registration Fees</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Category</th>
-                        <th>Presentation / Publication</th>
-                        <th>Attendee Only</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Students & Ph.D Scholars</td>
-                        <td>₹400</td>
-                        <td>₹300</td>
-                    </tr>
-                    <tr>
-                        <td>Academicians & Others</td>
-                        <td>₹800</td>
-                        <td>₹500</td>
-                    </tr>
-                </tbody>
-            </table>
-            <p style="margin-top: 10px; font-size: 0.9rem; color: #4a5568;">* Fee includes conference kit, lunch/dinner, certificate, and heritage excursion trip. Accommodation (AC Rooms) available at ₹500/day per person.</p>
+        <section id="fees" class="scroll-mt-24">
+            <div class="flex items-center gap-3 border-b-2 border-brand-accent pb-3 mb-6">
+                <h2 class="text-2xl sm:text-3xl font-bold text-brand-primary tracking-tight">Registration Fees</h2>
+            </div>
+            <div class="overflow-x-auto bg-white rounded-xl shadow-sm border border-slate-200 mb-4">
+                <table class="w-full text-left border-collapse">
+                    <thead>
+                        <tr class="bg-brand-primary text-white text-sm">
+                            <th class="py-3.5 px-6 font-semibold">Category</th>
+                            <th class="py-3.5 px-6 font-semibold">Presentation / Publication</th>
+                            <th class="py-3.5 px-6 font-semibold">Attendee Only</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-100 text-sm">
+                        <tr class="hover:bg-slate-50 transition-colors">
+                            <td class="py-3.5 px-6 font-medium text-slate-800">Students & Ph.D Scholars</td>
+                            <td class="py-3.5 px-6 font-bold text-brand-secondary">₹400</td>
+                            <td class="py-3.5 px-6 text-slate-600">₹300</td>
+                        </tr>
+                        <tr class="hover:bg-slate-50 transition-colors">
+                            <td class="py-3.5 px-6 font-medium text-slate-800">Academicians & Others</td>
+                            <td class="py-3.5 px-6 font-bold text-brand-secondary">₹800</td>
+                            <td class="py-3.5 px-6 text-slate-600">₹500</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="text-xs sm:text-sm text-slate-500 bg-white p-4 rounded-lg border border-slate-200">
+                <span class="font-bold text-slate-700">* Note:</span> Fee includes conference kit, lunch/dinner, certificate, and heritage excursion trip. Accommodation (AC Rooms) is available at <strong>₹500/day per person</strong> upon advance request.
+            </p>
         </section>
 
-        <!-- Contact Information -->
-        <section id="contact">
-            <h2 class="section-title">Organizing Committee & Contact</h2>
-            <div class="grid-2">
-                <div class="card">
-                    <h3>Convener & Organizing Secretary</h3>
-                    <p><strong>Dr. Ashwinkumar Modi</strong></p>
-                    <p>Co-Convener: Dr. Dharmendra Thaker</p>
-                    <p>Department of Commerce & Management</p>
-                    <p>Hemchandracharya North Gujarat University, Patan-384265, Gujarat</p>
+        <!-- Nearby Tourist Places -->
+        <section id="tourism" class="scroll-mt-24">
+            <div class="flex items-center gap-3 border-b-2 border-brand-accent pb-3 mb-2">
+                <h2 class="text-2xl sm:text-3xl font-bold text-brand-primary tracking-tight">Explore Nearby Tourist Places</h2>
+            </div>
+            <p class="text-sm font-medium text-slate-600 mb-6 flex items-center gap-2">
+                <span>✨</span> Rich heritage &nbsp;|&nbsp; Spiritual vibes &nbsp;|&nbsp; Scenic beauty
+            </p>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Rani ki Vav -->
+                <div class="bg-white rounded-xl p-5 shadow-sm border-t-4 border-brand-accent hover:shadow-md transition-shadow flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-start justify-between gap-2 mb-2">
+                            <h3 class="font-bold text-brand-primary text-base">📍 Rani ki Vav</h3>
+                            <span class="px-2 py-0.5 rounded-full text-xs font-bold bg-amber-100 text-amber-800 whitespace-nowrap">3 km</span>
+                        </div>
+                        <p class="text-xs text-slate-600 leading-relaxed">
+                            A UNESCO World Heritage Site, this magnificent stepwell is a world-renowned masterpiece of Solanki era architecture.
+                        </p>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-slate-100 flex items-center gap-1.5 text-xs text-brand-gold font-semibold">
+                        🏛️ Heritage Site
+                    </div>
                 </div>
-                <div class="card">
-                    <h3>Helpline & Queries</h3>
-                    <p><strong>Email:</strong> conferencegujarat@gmail.com</p>
-                    <p><strong>Phone:</strong> +91 99748 70511 / +91 99247 99715</p>
-                    <p><strong>Website:</strong> <a href="https://www.ngu.ac.in" target="_blank">www.ngu.ac.in</a></p>
+
+                <!-- Modhera Sun Temple -->
+                <div class="bg-white rounded-xl p-5 shadow-sm border-t-4 border-brand-accent hover:shadow-md transition-shadow flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-start justify-between gap-2 mb-2">
+                            <h3 class="font-bold text-brand-primary text-base">📍 Modhera Sun Temple</h3>
+                            <span class="px-2 py-0.5 rounded-full text-xs font-bold bg-amber-100 text-amber-800 whitespace-nowrap">35 km</span>
+                        </div>
+                        <p class="text-xs text-slate-600 leading-relaxed">
+                            Known for its stunning architectural balance and intricate stone carvings, this historic monument celebrates the Sun God.
+                        </p>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-slate-100 flex items-center gap-1.5 text-xs text-brand-gold font-semibold">
+                        ☀️ Ancient Marvel
+                    </div>
+                </div>
+
+                <!-- Ambaji Temple -->
+                <div class="bg-white rounded-xl p-5 shadow-sm border-t-4 border-brand-accent hover:shadow-md transition-shadow flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-start justify-between gap-2 mb-2">
+                            <h3 class="font-bold text-brand-primary text-base">📍 Ambaji Temple</h3>
+                            <span class="px-2 py-0.5 rounded-full text-xs font-bold bg-amber-100 text-amber-800 whitespace-nowrap">85 km</span>
+                        </div>
+                        <p class="text-xs text-slate-600 leading-relaxed">
+                            A major sacred Shakti Peeth shrine of Goddess Amba, revered for its immense spiritual significance and peaceful environment.
+                        </p>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-slate-100 flex items-center gap-1.5 text-xs text-brand-gold font-semibold">
+                        🕉️ Spiritual Pilgrimage
+                    </div>
+                </div>
+
+                <!-- Mount Abu -->
+                <div class="bg-white rounded-xl p-5 shadow-sm border-t-4 border-brand-accent hover:shadow-md transition-shadow flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-start justify-between gap-2 mb-2">
+                            <h3 class="font-bold text-brand-primary text-base">📍 Mount Abu</h3>
+                            <span class="px-2 py-0.5 rounded-full text-xs font-bold bg-amber-100 text-amber-800 whitespace-nowrap">145 km</span>
+                        </div>
+                        <p class="text-xs text-slate-600 leading-relaxed">
+                            The famed hill station nestled in the Aravalli Range, offering scenic lakes, cool mountain breezes, and peaceful nature trails.
+                        </p>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-slate-100 flex items-center gap-1.5 text-xs text-brand-gold font-semibold">
+                        🌲 Hill Station & Lakes
+                    </div>
                 </div>
             </div>
         </section>
 
-    </div>
+        <!-- Contact Information -->
+        <section id="contact" class="scroll-mt-24">
+            <div class="flex items-center gap-3 border-b-2 border-brand-accent pb-3 mb-6">
+                <h2 class="text-2xl sm:text-3xl font-bold text-brand-primary tracking-tight">Organizing Committee & Contact</h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="bg-white rounded-xl p-6 sm:p-8 shadow-sm border-l-4 border-brand-secondary">
+                    <h3 class="text-lg font-bold text-brand-primary mb-3">Convener & Organizing Secretary</h3>
+                    <p class="font-bold text-slate-800 text-base">Dr. Ashwinkumar Modi</p>
+                    <p class="text-slate-600 text-sm mt-1">Co-Convener: <strong>Dr. Dharmendra Thaker</strong></p>
+                    <p class="text-slate-600 text-sm mt-2">Department of Commerce & Management</p>
+                    <p class="text-slate-600 text-sm">Hemchandracharya North Gujarat University, Patan-384265, Gujarat, India</p>
+                </div>
+
+                <div class="bg-white rounded-xl p-6 sm:p-8 shadow-sm border-l-4 border-brand-secondary">
+                    <h3 class="text-lg font-bold text-brand-primary mb-3">Helpline & Queries</h3>
+                    <div class="space-y-2 text-sm text-slate-700">
+                        <p>
+                            <span class="font-semibold text-slate-900">Email:</span> 
+                            <a href="mailto:conferencegujarat@gmail.com" class="text-brand-secondary font-medium hover:underline">conferencegujarat@gmail.com</a>
+                        </p>
+                        <p>
+                            <span class="font-semibold text-slate-900">Phone:</span> 
+                            <span class="font-mono text-slate-800">+91 99748 70511</span> / <span class="font-mono text-slate-800">+91 99247 99715</span>
+                        </p>
+                        <p>
+                            <span class="font-semibold text-slate-900">Official Portal:</span> 
+                            <a href="https://www.ngu.ac.in" target="_blank" rel="noopener noreferrer" class="text-brand-secondary font-medium hover:underline">www.ngu.ac.in</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
 
     <!-- Footer -->
-    <footer>
-        <p>&copy; 2026 Department of Commerce & Management, HNGU Patan. All Rights Reserved.</p>
+    <footer class="bg-brand-navy text-white text-center py-8 border-t border-slate-800 mt-12">
+        <div class="max-w-7xl mx-auto px-4">
+            <p class="text-sm text-slate-400">
+                &copy; 2026 Department of Commerce & Management, HNGU Patan. All Rights Reserved.
+            </p>
+            <p class="text-xs text-slate-500 mt-2">
+                Hemchandracharya North Gujarat University, Patan, Gujarat - 384265
+            </p>
+        </div>
     </footer>
 
+    <!-- Interactive script for mobile drawer toggle -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const menuBtn = document.getElementById('mobileMenuBtn');
+            const mobileMenu = document.getElementById('mobileMenu');
+
+            if (menuBtn && mobileMenu) {
+                menuBtn.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('hidden');
+                });
+
+                // Auto-close on link selection
+                const mobileLinks = mobileMenu.querySelectorAll('a');
+                mobileLinks.forEach(link => {
+                    link.addEventListener('click', () => {
+                        mobileMenu.classList.add('hidden');
+                    });
+                });
+            }
+        });
+    </script>
 </body>
 </html>

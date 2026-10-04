@@ -37,8 +37,13 @@
         }
 
         main p,
+        main li,
         main td,
-        main th {
+        main th,
+        main dd,
+        main dt,
+        main details p,
+        main summary {
             text-align: justify;
         }
     </style>
@@ -118,7 +123,7 @@
             </div>
 
             <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight leading-tight text-white mb-4">
-                Two-Days Collaborative National Conference
+                Two-Day Collaborative National Conference
             </h1>
 
             <p class="text-base sm:text-lg md:text-xl text-slate-200 font-medium max-w-3xl mx-auto mb-6 leading-relaxed">
@@ -315,9 +320,18 @@
 
             <div class="mt-6 bg-white rounded-xl p-6 shadow-sm border-l-4 border-brand-secondary">
                 <ol class="list-decimal pl-5 text-sm text-slate-600 leading-relaxed space-y-4">
-                    <li>All accepted and presented papers will be considered for publication in the Conference Proceedings/Edited Volume with ISBN, subject to the prescribed editorial and peer-review process. Selected high-quality research papers may also be recommended for publication at suitable peer-reviewed journals (ICSSR), subject to the respective journal's editorial and peer-review policies. Important: Presentation at the conference does not automatically guarantee publication in any particular journal or indexing database.</li>
-                    <li>All submissions will undergo peer review for relevance, originality, quality, and academic contribution. Acceptance is subject to review and conference guidelines.</li>
-                    <li>Submitted papers must be original, unpublished, and comply with academic integrity and plagiarism guidelines.</li>
+                    <li>
+                        <h3 class="text-base font-bold text-brand-primary mb-1">Publication opportunities</h3>
+                        <p>All accepted and presented papers will be considered for publication in the Conference Proceedings/Edited Volume with ISBN, subject to the prescribed editorial and peer-review process. Selected high-quality research papers may also be recommended for publication at suitable peer-reviewed journals (ICSSR), subject to the respective journal's editorial and peer-review policies. Important: Presentation at the conference does not automatically guarantee publication in any particular journal or indexing database.</p>
+                    </li>
+                    <li>
+                        <h3 class="text-base font-bold text-brand-primary mb-1">Peer review process</h3>
+                        <p>All submissions will undergo peer review for relevance, originality, quality, and academic contribution. Acceptance is subject to review and conference guidelines.</p>
+                    </li>
+                    <li>
+                        <h3 class="text-base font-bold text-brand-primary mb-1">Publication ethics and plagiarism</h3>
+                        <p>Submitted papers must be original, unpublished, and comply with academic integrity and plagiarism guidelines.</p>
+                    </li>
                 </ol>
             </div>
         </section>
@@ -526,10 +540,10 @@
             </div>
 
             <div class="mt-6 bg-white rounded-xl shadow-sm border-l-4 border-brand-secondary p-6 sm:p-8 text-sm text-slate-700 leading-relaxed space-y-3">
+                <h3 class="text-xl font-bold text-brand-primary mb-1">How to reach Patan</h3>
                 <p><span class="font-semibold text-brand-primary">✈️ By Air:</span> The nearest major airport is Sardar Vallabhbhai Patel International Airport, Ahmedabad, approximately 125 km from Patan.</p>
                 <p><span class="font-semibold text-brand-primary">🚆 By Rail:</span> Patan Railway Station is connected to Ahmedabad and other major cities of Gujarat. The university is easily accessible from the railway station.</p>
                 <p><span class="font-semibold text-brand-primary">🚌 By Road:</span> Patan is well connected by road with Ahmedabad, Mehsana, Unjha and other major cities of Gujarat. Regular bus and taxi services are available.</p>
-                <p><span class="font-semibold text-brand-primary">📍 Conference Venue:</span> Convention Hall, Hemchandracharya North Gujarat University, Patan, Gujarat.</p>
             </div>
         </section>
 
@@ -777,48 +791,87 @@
                 <h2 class="text-2xl sm:text-3xl font-bold text-brand-primary tracking-tight">Frequently Asked Questions (FAQ)</h2>
             </div>
             <div class="bg-white rounded-xl shadow-sm border-l-4 border-brand-secondary p-6 sm:p-8">
-                <ol class="list-decimal pl-5 space-y-4 text-sm sm:text-base text-slate-700 leading-relaxed">
-                    <li>
-                        <p class="font-semibold text-brand-primary">Who can participate in the conference?</p>
-                        <p>Academicians, researchers, professionals, Ph.D. scholars and students from any discipline or stream can participate.</p>
-                    </li>
-                    <li>
-                        <p class="font-semibold text-brand-primary">Can I participate without presenting a paper?</p>
-                        <p>Yes. Participants may register for participation without presenting a paper.</p>
-                    </li>
-                    <li>
-                        <p class="font-semibold text-brand-primary">Can two or more authors present one paper?</p>
-                        <p>Yes. Two or more authors can jointly present a paper.</p>
-                    </li>
-                    <li>
-                        <p class="font-semibold text-brand-primary">Is online presentation available?</p>
-                        <p>Yes. Registered participants can present accepted papers online and will receive a Certificate of Presentation &amp; Participation.</p>
-                    </li>
-                    <li>
-                        <p class="font-semibold text-brand-primary">What certificates will be provided?</p>
-                        <p>Participants will receive a Certificate of Participation. Presenters will receive a Certificate of Presentation &amp; Participation.</p>
-                    </li>
-                    <li>
-                        <p class="font-semibold text-brand-primary">Will presenters receive a copy of an abstract/full publication?</p>
-                        <p>Yes. Registered presenters will receive a copy of the Abstract/full Publication.</p>
-                    </li>
-                    <li>
-                        <p class="font-semibold text-brand-primary">Can I attend only one day?</p>
-                        <p>Yes. Participants may attend either one or both days of the conference.</p>
-                    </li>
-                    <li>
-                        <p class="font-semibold text-brand-primary">Is accommodation available?</p>
-                        <p>Yes. Accommodation is available for registered participants, subject to availability and applicable charges.</p>
-                    </li>
-                    <li>
-                        <p class="font-semibold text-brand-primary">What will offline participants receive?</p>
-                        <p>Offline participants will receive a Registration Kit, Certificate, Free Excursion tour, and scheduled meals/refreshments.</p>
-                    </li>
-                    <li>
-                        <p class="font-semibold text-brand-primary">Is publication of the full paper guaranteed?</p>
-                        <p>No. Publication is subject to peer review, editorial evaluation, and conference guidelines.</p>
-                    </li>
-                </ol>
+                <div class="space-y-3">
+                    <details class="group rounded-xl border border-slate-200 bg-slate-50 p-4 shadow-sm open:bg-white open:ring-2 open:ring-brand-accent/30" open>
+                        <summary class="cursor-pointer list-none flex items-center justify-between gap-3 font-semibold text-brand-primary text-sm sm:text-base">
+                            <span>Who can participate in the conference?</span>
+                            <span class="text-2xl leading-none text-brand-secondary transition-transform group-open:rotate-45">+</span>
+                        </summary>
+                        <p class="mt-3 text-sm sm:text-base text-slate-700 leading-relaxed">Academicians, researchers, professionals, Ph.D. scholars and students from any discipline or stream can participate.</p>
+                    </details>
+
+                    <details class="group rounded-xl border border-slate-200 bg-slate-50 p-4 shadow-sm open:bg-white open:ring-2 open:ring-brand-accent/30">
+                        <summary class="cursor-pointer list-none flex items-center justify-between gap-3 font-semibold text-brand-primary text-sm sm:text-base">
+                            <span>Can I participate without presenting a paper?</span>
+                            <span class="text-2xl leading-none text-brand-secondary transition-transform group-open:rotate-45">+</span>
+                        </summary>
+                        <p class="mt-3 text-sm sm:text-base text-slate-700 leading-relaxed">Yes. Participants may register for participation without presenting a paper.</p>
+                    </details>
+
+                    <details class="group rounded-xl border border-slate-200 bg-slate-50 p-4 shadow-sm open:bg-white open:ring-2 open:ring-brand-accent/30">
+                        <summary class="cursor-pointer list-none flex items-center justify-between gap-3 font-semibold text-brand-primary text-sm sm:text-base">
+                            <span>Can two or more authors present one paper?</span>
+                            <span class="text-2xl leading-none text-brand-secondary transition-transform group-open:rotate-45">+</span>
+                        </summary>
+                        <p class="mt-3 text-sm sm:text-base text-slate-700 leading-relaxed">Yes. Two or more authors can jointly present a paper.</p>
+                    </details>
+
+                    <details class="group rounded-xl border border-slate-200 bg-slate-50 p-4 shadow-sm open:bg-white open:ring-2 open:ring-brand-accent/30">
+                        <summary class="cursor-pointer list-none flex items-center justify-between gap-3 font-semibold text-brand-primary text-sm sm:text-base">
+                            <span>Is online presentation available?</span>
+                            <span class="text-2xl leading-none text-brand-secondary transition-transform group-open:rotate-45">+</span>
+                        </summary>
+                        <p class="mt-3 text-sm sm:text-base text-slate-700 leading-relaxed">Yes. Registered participants can present accepted papers online and will receive a Certificate of Presentation &amp; Participation.</p>
+                    </details>
+
+                    <details class="group rounded-xl border border-slate-200 bg-slate-50 p-4 shadow-sm open:bg-white open:ring-2 open:ring-brand-accent/30">
+                        <summary class="cursor-pointer list-none flex items-center justify-between gap-3 font-semibold text-brand-primary text-sm sm:text-base">
+                            <span>What certificates will be provided?</span>
+                            <span class="text-2xl leading-none text-brand-secondary transition-transform group-open:rotate-45">+</span>
+                        </summary>
+                        <p class="mt-3 text-sm sm:text-base text-slate-700 leading-relaxed">Participants will receive a Certificate of Participation. Presenters will receive a Certificate of Presentation &amp; Participation.</p>
+                    </details>
+
+                    <details class="group rounded-xl border border-slate-200 bg-slate-50 p-4 shadow-sm open:bg-white open:ring-2 open:ring-brand-accent/30">
+                        <summary class="cursor-pointer list-none flex items-center justify-between gap-3 font-semibold text-brand-primary text-sm sm:text-base">
+                            <span>Will presenters receive a copy of an abstract/full publication?</span>
+                            <span class="text-2xl leading-none text-brand-secondary transition-transform group-open:rotate-45">+</span>
+                        </summary>
+                        <p class="mt-3 text-sm sm:text-base text-slate-700 leading-relaxed">Yes. Registered presenters will receive a copy of the Abstract/full Publication.</p>
+                    </details>
+
+                    <details class="group rounded-xl border border-slate-200 bg-slate-50 p-4 shadow-sm open:bg-white open:ring-2 open:ring-brand-accent/30">
+                        <summary class="cursor-pointer list-none flex items-center justify-between gap-3 font-semibold text-brand-primary text-sm sm:text-base">
+                            <span>Can I attend only one day?</span>
+                            <span class="text-2xl leading-none text-brand-secondary transition-transform group-open:rotate-45">+</span>
+                        </summary>
+                        <p class="mt-3 text-sm sm:text-base text-slate-700 leading-relaxed">Yes. Participants may attend either one or both days of the conference.</p>
+                    </details>
+
+                    <details class="group rounded-xl border border-slate-200 bg-slate-50 p-4 shadow-sm open:bg-white open:ring-2 open:ring-brand-accent/30">
+                        <summary class="cursor-pointer list-none flex items-center justify-between gap-3 font-semibold text-brand-primary text-sm sm:text-base">
+                            <span>Is accommodation available?</span>
+                            <span class="text-2xl leading-none text-brand-secondary transition-transform group-open:rotate-45">+</span>
+                        </summary>
+                        <p class="mt-3 text-sm sm:text-base text-slate-700 leading-relaxed">Yes. Accommodation is available for registered participants, subject to availability and applicable charges.</p>
+                    </details>
+
+                    <details class="group rounded-xl border border-slate-200 bg-slate-50 p-4 shadow-sm open:bg-white open:ring-2 open:ring-brand-accent/30">
+                        <summary class="cursor-pointer list-none flex items-center justify-between gap-3 font-semibold text-brand-primary text-sm sm:text-base">
+                            <span>What will offline participants receive?</span>
+                            <span class="text-2xl leading-none text-brand-secondary transition-transform group-open:rotate-45">+</span>
+                        </summary>
+                        <p class="mt-3 text-sm sm:text-base text-slate-700 leading-relaxed">Offline participants will receive a Registration Kit, Certificate, Free Excursion tour, and scheduled meals/refreshments.</p>
+                    </details>
+
+                    <details class="group rounded-xl border border-slate-200 bg-slate-50 p-4 shadow-sm open:bg-white open:ring-2 open:ring-brand-accent/30">
+                        <summary class="cursor-pointer list-none flex items-center justify-between gap-3 font-semibold text-brand-primary text-sm sm:text-base">
+                            <span>Is publication of the full paper guaranteed?</span>
+                            <span class="text-2xl leading-none text-brand-secondary transition-transform group-open:rotate-45">+</span>
+                        </summary>
+                        <p class="mt-3 text-sm sm:text-base text-slate-700 leading-relaxed">No. Publication is subject to peer review, editorial evaluation, and conference guidelines.</p>
+                    </details>
+                </div>
             </div>
         </section>
 
